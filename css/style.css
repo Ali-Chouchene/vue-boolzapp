@@ -53,6 +53,12 @@ h6 {
     align-self: flex-end;
 }
 
+.last-date {
+    text-align: end;
+    color: rgb(163, 154, 154);
+    font-size: 14px;
+    font-weight: 200;
+}
 
 /*! Icons */
 .fa-gray {
@@ -86,32 +92,52 @@ h6 {
 
 .left-navbar {
     height: 100%;
-    width: 38%;
-    background-color: rgba(0, 0, 255, 0.397);
+    width: 35%;
+    background-color: rgb(255, 255, 255);
+    position: relative;
 }
 
 .navbar-h {
     height: 7%;
     width: 100%;
     background-color: var(--thin_gray);
+    position: sticky;
+    z-index: 1;
 }
 
 .navbar-alert {
     height: 10%;
     width: 100%;
     background-color: var(--light_blue);
+    position: sticky;
+    z-index: 1;
 }
 
 .contacts-search {
     width: 100%;
+    height: 5%;
+    position: sticky;
+    z-index: 1;
 }
 
+
+.contacts-list {
+    max-height: 78%;
+    width: 100%;
+    overflow-y: auto;
+    /* flex-wrap: wrap; */
+
+}
+
+.contacts-list .col-12 {
+    height: 80px;
+}
 
 /* RIGHT SIDE */
 
 .main-content {
     height: 100%;
-    width: 62%;
+    width: 65%;
     background-color: rgba(0, 255, 85, 0.384);
     position: relative;
 }
