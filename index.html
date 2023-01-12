@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <div class="container-fluid linear-bg d-flex justify-content-center align-items-center">
+    <div id="root" class="container-fluid linear-bg d-flex justify-content-center align-items-center">
         <div class="main-page d-flex">
 
             <!--LEFT SIDE-->
@@ -59,128 +59,22 @@
                     </div>
                 </div>
                 <div class="row contacts-list g-4 m-0 ">
-                    <div class="col-12 align-content-start m-0 py-4 px-4 bg-success d-flex justify-content-between">
+                    <div v-for="(contact, i) in contacts"
+                        class="col-12 align-content-start m-0 py-4 px-4 d-flex justify-content-between">
                         <div class="contacted h-100 d-flex gap-3 align-items-center">
                             <div class="contact-pic">
-                                <img class="profile-pic" src="img/avatar_1.jpg" alt="">
+                                <img class="profile-pic" src='img/avatar_1.jpg' alt="">
                             </div>
                             <div class="contact-infos">
-                                <h5 class="m-0">Max</h5>
-                                <p class="fa-gray m-0">Ultimo accesso oggi alle</p>
-                            </div>
-                        </div>
-                        <div class="last-date w-50">12/01/2023 15:09</div>
-                    </div>
-                    <div class="col-12 m-0 py-4 px-4 bg-success d-flex justify-content-between ">
-                        <div class="contacted h-100 d-flex gap-3 align-items-center">
-                            <div class="contact-pic">
-                                <img class="profile-pic" src="img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="contact-infos">
-                                <h5 class="m-0">Max</h5>
-                                <p class="fa-gray m-0">Ultimo accesso oggi alle</p>
-                            </div>
-                        </div>
-                        <div class="last-date w-50">12/01/2023 15:09</div>
-                    </div>
-                    <div class="col-12 align-content-start m-0 py-4 px-4 bg-success d-flex justify-content-between ">
-                        <div class="contacted h-100 d-flex gap-3 align-items-center">
-                            <div class="contact-pic">
-                                <img class="profile-pic" src="img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="contact-infos">
-                                <h5 class="m-0">Max</h5>
-                                <p class="fa-gray m-0">Ultimo accesso oggi alle</p>
-                            </div>
-                        </div>
-                        <div class="last-date w-50">12/01/2023 15:09</div>
-                    </div>
-                    <div class="col-12 m-0 py-4 px-4 bg-success d-flex justify-content-between ">
-                        <div class="contacted h-100 d-flex gap-3 align-items-center">
-                            <div class="contact-pic">
-                                <img class="profile-pic" src="img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="contact-infos">
-                                <h5 class="m-0">Max</h5>
-                                <p class="fa-gray m-0">Ultimo accesso oggi alle</p>
-                            </div>
-                        </div>
-                        <div class="last-date w-50">12/01/2023 15:09</div>
-                    </div>
-                    <div class="col-12 align-content-start m-0 py-4 px-4 bg-success d-flex justify-content-between ">
-                        <div class="contacted h-100 d-flex gap-3 align-items-center">
-                            <div class="contact-pic">
-                                <img class="profile-pic" src="img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="contact-infos">
-                                <h5 class="m-0">Max</h5>
-                                <p class="fa-gray m-0">Ultimo accesso oggi alle</p>
-                            </div>
-                        </div>
-                        <div class="last-date w-50">12/01/2023 15:09</div>
-                    </div>
-                    <div class="col-12 m-0 py-4 px-4 bg-success d-flex justify-content-between ">
-                        <div class="contacted h-100 d-flex gap-3 align-items-center">
-                            <div class="contact-pic">
-                                <img class="profile-pic" src="img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="contact-infos">
-                                <h5 class="m-0">Max</h5>
-                                <p class="fa-gray m-0">Ultimo accesso oggi alle</p>
-                            </div>
-                        </div>
-                        <div class="last-date w-50">12/01/2023 15:09</div>
-                    </div>
-                    <!-- <div class="col-12 align-content-start m-0 py-4 px-4 bg-success d-flex justify-content-between ">
-                        <div class="contacted h-100 d-flex gap-3 align-items-center">
-                            <div class="contact-pic">
-                                <img class="profile-pic" src="img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="contact-infos">
-                                <h5 class="m-0">Max</h5>
-                                <p class="fa-gray m-0">Ultimo accesso oggi alle</p>
-                            </div>
-                        </div>
-                        <div class="last-date w-50">12/01/2023 15:09</div>
-                    </div>
-                    <div class="col-12 m-0 py-4 px-4 bg-success d-flex justify-content-between ">
-                        <div class="contacted h-100 d-flex gap-3 align-items-center">
-                            <div class="contact-pic">
-                                <img class="profile-pic" src="img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="contact-infos">
-                                <h5 class="m-0">Max</h5>
-                                <p class="fa-gray m-0">Ultimo accesso oggi alle</p>
-                            </div>
-                        </div>
-                        <div class="last-date w-50">12/01/2023 15:09</div>
-                    </div>
-                    <div class="col-12 align-content-start m-0 py-4 px-4 bg-success d-flex justify-content-between ">
-                        <div class="contacted h-100 d-flex gap-3 align-items-center">
-                            <div class="contact-pic">
-                                <img class="profile-pic" src="img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="contact-infos">
-                                <h5 class="m-0">Max</h5>
-                                <p class="fa-gray m-0">Ultimo accesso oggi alle</p>
-                            </div>
-                        </div>
-                        <div class="last-date w-50">12/01/2023 15:09</div>
-                    </div>
-                    <div class="col-12 m-0 py-4 px-4 bg-success d-flex justify-content-between ">
-                        <div class="contacted h-100 d-flex gap-3 align-items-center">
-                            <div class="contact-pic">
-                                <img class="profile-pic" src="img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="contact-infos">
-                                <h5 class="m-0">Max</h5>
-                                <p class="fa-gray m-0">Ultimo accesso oggi alle</p>
-                            </div>
-                        </div>
-                        <div class="last-date w-50">12/01/2023 15:09</div>
-                    </div> -->
-                </div>
+                                <h5 class="m-0">{{ contact.name }}</h5>
 
+                                <!----DA SISTEMARE PERCHE PRENDE L' ULTIMO MESSAGGIO-->
+                                <p class="fa-gray m-0">Ultimo accesso oggi alle {{ contact.messages[1].date }}</p>
+                            </div>
+                        </div>
+                        <div class="last-date w-50">{{ contact.date }}</div>
+                    </div>
+                </div>
             </div>
             <!--RIGHT SIDE-->
 
@@ -204,9 +98,18 @@
                 <div class="conversation">
                     <div class="container p-5">
                         <div class="row g-2 flex-column p-3">
+
+                            <!-- <div v-for="message in contacts.messages" class=" "
+                            :class="{'sended col-12 message' : message.status === 'sent'} ">
+                            ciaonjrnrymnrmnrmnrm<span class="sended-date">12/01/2023
+                                15:09</span></div>
+                        <div :class="{'recevied col-12 message' : message.status === 'received'} ">>ciao<span
+                                class="sended-date">12/01/2023
+                                15:09</span></div> -->
+
                             <div class="message sended col-12">ciaonjrnrymnrmnrmnrm<span class="sended-date">12/01/2023
                                     15:09</span></div>
-                            <div class="message receved col-12">ciao<span class="sended-date">12/01/2023
+                            <div class="message recevied col-12">ciao<span class="sended-date">12/01/2023
                                     15:09</span></div>
 
                         </div>
@@ -223,7 +126,7 @@
         </div>
     </div>
 
-
+    <script src="script/data_milestone2.js"></script>
     <script src="script/script.js"></script>
 </body>
 
