@@ -1,49 +1,78 @@
+/*! COLORS*/
+:root {
+    --icons: rgb(177, 177, 177);
+    --top_bg: #009688;
+    --bottom_bg: #DBDBD3;
+    --light_blue: #8EDAFC;
+    --thin_gray: rgb(234, 234, 234);
+}
+
+
+/**utilities**/
+.pointer {
+    cursor: pointer;
+}
+
+
+/*! Icons */
+.fa-gray {
+    color: var(--icons);
+}
+
+
+/* BACKGROUNG */
 .linear-bg {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(#009688 15%, #DBDBD3 15%);
+    background: linear-gradient(var(--top_bg) 15%, var(--bottom_bg) 15%);
 }
 
+/* MAIN */
+
 .main-page {
-    width: 75vw;
+    width: 80vw;
     height: 90vh;
 }
 
+/* LEFT SIDE */
+
 .left-navbar {
     height: 100%;
-    width: 35%;
+    width: 38%;
     background-color: rgba(0, 0, 255, 0.397);
-}
-
-.main-content {
-    height: 100%;
-    width: 65%;
-    background-color: rgba(0, 255, 85, 0.384);
-    position: relative;
 }
 
 .navbar-h {
     height: 10%;
     width: 100%;
-    background-color: #ff00aa;
+    background-color: var(--thin_gray);
 }
 
 .navbar-alert {
     height: 11%;
     width: 100%;
-    background-color: rgb(142, 218, 252);
+    background-color: var(--light_blue);
 }
 
 .contacts-search {
-    height: 7%;
     width: 100%;
-    background-color: #ff0000;
+}
+
+
+/* RIGHT SIDE */
+
+.main-content {
+    height: 100%;
+    width: 62%;
+    background-color: rgba(0, 255, 85, 0.384);
+    position: relative;
 }
 
 .content-h {
+    border-left: 1px solid black;
     height: 10%;
     width: 100%;
-    background-color: #ff0000;
+    background-color: var(--thin_gray);
     position: sticky;
     top: 0;
     left: 0;
@@ -55,12 +84,13 @@
     height: 80%;
     width: 100%;
     overflow-y: auto;
+    background-image: url(../img/mine.jpg);
 }
 
 .conversation-input {
     height: 10%;
     width: 100%;
-    background-color: #ff0000;
+    background-color: var(--thin_gray);
     position: sticky;
     bottom: 0;
     left: 0;
