@@ -1,7 +1,7 @@
 /*! COLORS*/
 :root {
-    --icons: rgb(177, 177, 177);
-    --top_bg: #009688;
+    --icons: rgb(145, 139, 139);
+    --top_bg: #00A884;
     --bottom_bg: #DBDBD3;
     --light_blue: #8EDAFC;
     --thin_gray: rgb(234, 234, 234);
@@ -9,14 +9,48 @@
 
 
 /**utilities**/
+
+h6 {
+    margin: 0;
+}
+
 .pointer {
     cursor: pointer;
 }
 
 .profile-pic {
-    height: 70px;
-    width: 70px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
+}
+
+/*! CHAT UTILITIES */
+
+.message {
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    padding: 7px;
+    width: 25%;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+
+.sended {
+    align-self: flex-end;
+    background-color: #D5F9BA;
+}
+
+.receved {
+    align-self: flex-start;
+    background-color: #ffffff;
+}
+
+.sended-date {
+    color: rgb(163, 154, 154);
+    font-size: 12px;
+    font-weight: 100;
+    align-self: flex-end;
 }
 
 
@@ -26,12 +60,19 @@
     cursor: pointer;
 }
 
+.fa-gray:hover {
+    color: rgba(16, 165, 16, 0.589);
+}
+
+.fa-blue {
+    color: var(--light_blue);
+}
 
 /* BACKGROUNG */
 .linear-bg {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(var(--top_bg) 15%, var(--bottom_bg) 15%);
+    background: linear-gradient(var(--top_bg) 12%, var(--bottom_bg) 12%);
 }
 
 /* MAIN */
@@ -50,13 +91,13 @@
 }
 
 .navbar-h {
-    height: 10%;
+    height: 7%;
     width: 100%;
     background-color: var(--thin_gray);
 }
 
 .navbar-alert {
-    height: 11%;
+    height: 10%;
     width: 100%;
     background-color: var(--light_blue);
 }
@@ -76,8 +117,8 @@
 }
 
 .content-h {
-    border-left: 1px solid black;
-    height: 10%;
+    border-left: 1px solid rgb(211, 208, 208);
+    height: 7%;
     width: 100%;
     background-color: var(--thin_gray);
     position: sticky;
@@ -88,14 +129,14 @@
 }
 
 .conversation {
-    height: 80%;
+    height: calc(100% - 14%);
     width: 100%;
     overflow-y: auto;
     background-image: url(../img/mine.jpg);
 }
 
 .conversation-input {
-    height: 10%;
+    height: 7%;
     width: 100%;
     background-color: var(--thin_gray);
     position: sticky;
