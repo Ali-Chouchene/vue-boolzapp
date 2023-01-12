@@ -25,24 +25,50 @@
 <body>
     <div class="container-fluid linear-bg d-flex justify-content-center align-items-center">
         <div class="main-page d-flex">
+
+            <!--LEFT SIDE-->
             <div class="left-navbar">
-                <div class="navbar-h"></div>
+                <div class="navbar-h p-3 d-flex justify-content-between">
+                    <div class="user-info h-100 gap-2 d-flex align-items-center ">
+                        <img class="profile-pic pointer" src="img/avatar_io.jpg" alt="">
+                        <h5>Ali Chouchene</h5>
+                    </div>
+                    <div class="user-settings d-flex gap-3 align-items-center">
+                        <i class="fa-solid fa-circle-notch fa-2xl fa-gray"></i>
+                        <i class="fa-solid fa-message fa-2xl fa-gray"></i>
+                        <i class="fa-solid fa-ellipsis-vertical fa-2xl fa-gray"></i>
+                    </div>
+                </div>
                 <div class="navbar-alert"></div>
                 <div class="contacts-search">
                     <div class="input-group mb-3 p-1">
-                        <span class="input-group-text rounded-0 pointer"><i
-                                class="fa-solid fa-magnifying-glass fa-gray"></i></span>
+                        <span class="input-group-text rounded-0 pointer">
+                            <i class="fa-solid fa-magnifying-glass fa-gray"></i>
+                        </span>
                         <input type="text" class="form-control rounded-0" placeholder="Cerca o inizia una chat">
                     </div>
-
                 </div>
             </div>
-            <div class="main-content">
-                <div class="content-h">
-                </div>
-                <div class="conversation">
+            <!--RIGHT SIDE-->
 
+            <div class="main-content">
+                <div class="content-h p-4 d-flex justify-content-between">
+                    <div class="contacted h-100 d-flex gap-3 align-items-center">
+                        <div class="contact-pic">
+                            <img class="profile-pic" src="img/avatar_1.jpg" alt="">
+                        </div>
+                        <div class="contact-infos">
+                            <h5 class="m-0">Max</h5>
+                            <p class="fa-gray m-0">Ultimo accesso oggi alle</p>
+                        </div>
+                    </div>
+                    <div class="chat-options d-flex gap-3 align-items-center">
+                        <i class="fa-solid fa-magnifying-glass fa-2xl fa-gray"></i>
+                        <i class="fa-solid fa-paperclip fa-2xl fa-gray"></i>
+                        <i class="fa-solid fa-ellipsis-vertical fa-2xl fa-gray"></i>
+                    </div>
                 </div>
+                <div class="conversation"></div>
                 <div class="conversation-input"></div>
             </div>
         </div>
