@@ -24,6 +24,12 @@ h6 {
     border-radius: 50%;
 }
 
+.w-gray {
+    color: var(--icons);
+    font-weight: 100;
+    font-size: 14px;
+}
+
 /*! CHAT UTILITIES */
 
 .message {
@@ -41,7 +47,7 @@ h6 {
     background-color: #D5F9BA;
 }
 
-.recevied {
+.received {
     align-self: flex-start;
     background-color: #ffffff;
 }
@@ -56,7 +62,7 @@ h6 {
 .last-date {
     text-align: end;
     color: rgb(163, 154, 154);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 200;
 }
 

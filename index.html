@@ -14,8 +14,11 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!--stylesheet-->
     <link rel="stylesheet" href="css/style.css">
+
     <!--Vue JS-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!---MY JS-->
+    <script defer src="script/script.js"></script>
 
     <title>
         BoolZapp
@@ -58,10 +61,10 @@
                         <input type="text" class="form-control rounded-0 " placeholder="Cerca o inizia una chat">
                     </div>
                 </div>
-                <div class="row contacts-list g-4 m-0 ">
+                <div class="row contacts-list g-4 m-0">
                     <!--ciclo v-for-->
-                    <div v-for="(contact, i) in contacts"
-                        class="col-12 align-content-start m-0 py-4 px-4 d-flex justify-content-between">
+                    <div v-for="(contact, i) in contacts" @click="setCurrentI(i)"
+                        class="col-12 align-content-start m-0 pointer py-4 px-4 d-flex justify-content-between">
                         <div class="contacted h-100 d-flex gap-3 align-items-center">
                             <div class="contact-pic">
                                 <img class="profile-pic" :src="getAvatarUrl(contact.avatar)" :alt="contact.name">
@@ -70,10 +73,10 @@
                                 <h5 class="m-0">{{ contact.name }}</h5>
 
                                 <!----DA SISTEMARE PERCHE PRENDE L' ULTIMO MESSAGGIO-->
-                                <p class="fa-gray m-0">Ultimo accesso oggi alle {{ contact.messages[1].date }}</p>
+                                <p class="w-gray  m-0">{{contact.messages[1].text + '...' }}</p>
                             </div>
                         </div>
-                        <div class="last-date w-50">{{ }}</div>
+                        <div class="last-date w-gray w-50"> {{contact.messages[1].date}} </div>
                     </div>
                 </div>
             </div>
@@ -83,11 +86,12 @@
                 <div class="content-h p-4 d-flex justify-content-between">
                     <div class="contacted h-100 d-flex gap-3 align-items-center">
                         <div class="contact-pic">
-                            <img class="profile-pic" :src="getAvatarUrl(data.user.avatar)" alt="">
+                            <img class="profile-pic" :src="getAvatarUrl(currentContact.avatar)"
+                                alt="currentContact.name">
                         </div>
                         <div class="contact-infos">
-                            <h5 class="m-0">{{}}</h5>
-                            <p class="fa-gray m-0">Ultimo accesso oggi alle</p>
+                            <h5 class="m-0">{{ currentContact.name }}</h5>
+                            <p class="fa-gray m-0">Ultimo accesso oggi alle {{contacts[currentI].date}}</p>
                         </div>
                     </div>
                     <div class="chat-options d-flex gap-3 align-items-center">
@@ -99,21 +103,11 @@
                 <div class="conversation">
                     <div class="container p-5">
                         <div class="row g-2 flex-column p-3">
-
-                            <!-- <div v-for="message in contacts.messages" class=" "
-                            :class="{'sended col-12 message' : message.status === 'sent'} ">
-                            ciaonjrnrymnrmnrmnrm<span class="sended-date">12/01/2023
-                                15:09</span></div>
-                        <div :class="{'recevied col-12 message' : message.status === 'received'} ">>ciao<span
-                                class="sended-date">12/01/2023
-                                15:09</span></div> -->
-
-                            <div class="message sent  shadow col-12">ciaonjrnrymnrmnrmnrm<span
-                                    class="sended-date">12/01/2023
-                                    15:09</span></div>
-                            <div class="message recevied shadow col-12">ciao<span class="sended-date">12/01/2023
-                                    15:09</span></div>
-
+                            <!--v-for messaggi-->
+                            <div v-for="message in contacts[currentI].messages" class="message shadow col-12"
+                                :class="message.status">
+                                {{message.text}}<span class="sended-date">{{message.date}}</span>
+                            </div>
                         </div>
                     </div>
 
@@ -121,15 +115,22 @@
                 </div>
                 <div class="conversation-input input-group-lg  d-flex align-items-center justify-content-around p-4">
                     <i class="fa-regular fa-face-smile fa-gray fa-xl"></i>
-                    <input type="text" placeholder="Scrivi un messaggio" class="form-control m-5">
+                    <input ref="inputFocus" @keyup.enter="addMessage" @keyup.esc="resetInput" type="text"
+                        placeholder="Scrivi un messaggio" class="form-control m-5" v-model.trim="newMessage">
                     <i class="fa-solid fa-microphone  fa-gray fa-xl"></i>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <!--DB-1-->
     <script src="script/data_milestone1.js"></script>
+    <!--DB-2-->
     <script src="script/data_milestone2.js"></script>
-    <script src="script/script.js"></script>
+    <!-- LUXON -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+
 </body>
 
 
