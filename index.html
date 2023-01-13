@@ -24,14 +24,14 @@
 
 <body>
     <div id="root" class="container-fluid linear-bg d-flex justify-content-center align-items-center">
-        <div class="main-page d-flex">
+        <div class="main-page shadow d-flex">
 
             <!--LEFT SIDE-->
             <div class="left-navbar">
                 <div class="navbar-h p-3 d-flex justify-content-between">
                     <div class="user-info h-100 gap-2 d-flex align-items-center ">
-                        <img class="profile-pic pointer" src="img/avatar_io.jpg" alt="">
-                        <h5>Ali Chouchene</h5>
+                        <img class="profile-pic pointer" :src="getAvatarUrl(data.user.avatar)" alt="">
+                        <h5>{{data.user.name}}</h5>
                     </div>
                     <div class="user-settings d-flex gap-3 align-items-center">
                         <i class="fa-solid fa-circle-notch fa-xl fa-gray"></i>
@@ -59,11 +59,12 @@
                     </div>
                 </div>
                 <div class="row contacts-list g-4 m-0 ">
+                    <!--ciclo v-for-->
                     <div v-for="(contact, i) in contacts"
                         class="col-12 align-content-start m-0 py-4 px-4 d-flex justify-content-between">
                         <div class="contacted h-100 d-flex gap-3 align-items-center">
                             <div class="contact-pic">
-                                <img class="profile-pic" src='img/avatar_1.jpg' alt="">
+                                <img class="profile-pic" :src="getAvatarUrl(contact.avatar)" :alt="contact.name">
                             </div>
                             <div class="contact-infos">
                                 <h5 class="m-0">{{ contact.name }}</h5>
@@ -72,7 +73,7 @@
                                 <p class="fa-gray m-0">Ultimo accesso oggi alle {{ contact.messages[1].date }}</p>
                             </div>
                         </div>
-                        <div class="last-date w-50">{{ contact.date }}</div>
+                        <div class="last-date w-50">{{ }}</div>
                     </div>
                 </div>
             </div>
@@ -82,10 +83,10 @@
                 <div class="content-h p-4 d-flex justify-content-between">
                     <div class="contacted h-100 d-flex gap-3 align-items-center">
                         <div class="contact-pic">
-                            <img class="profile-pic" src="img/avatar_1.jpg" alt="">
+                            <img class="profile-pic" :src="getAvatarUrl(data.user.avatar)" alt="">
                         </div>
                         <div class="contact-infos">
-                            <h5 class="m-0">Max</h5>
+                            <h5 class="m-0">{{}}</h5>
                             <p class="fa-gray m-0">Ultimo accesso oggi alle</p>
                         </div>
                     </div>
@@ -107,9 +108,10 @@
                                 class="sended-date">12/01/2023
                                 15:09</span></div> -->
 
-                            <div class="message sended col-12">ciaonjrnrymnrmnrmnrm<span class="sended-date">12/01/2023
+                            <div class="message sent  shadow col-12">ciaonjrnrymnrmnrmnrm<span
+                                    class="sended-date">12/01/2023
                                     15:09</span></div>
-                            <div class="message recevied col-12">ciao<span class="sended-date">12/01/2023
+                            <div class="message recevied shadow col-12">ciao<span class="sended-date">12/01/2023
                                     15:09</span></div>
 
                         </div>
@@ -125,7 +127,7 @@
             </div>
         </div>
     </div>
-
+    <script src="script/data_milestone1.js"></script>
     <script src="script/data_milestone2.js"></script>
     <script src="script/script.js"></script>
 </body>

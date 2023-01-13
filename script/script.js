@@ -4,20 +4,22 @@ const app = Vue.createApp({
     name: "Boolzapp",
     data() {
         return {
+            data,
             contacts,
+            currentI: 0,
         }
     },
     computed: {
 
-        userImg(i) {
-            const imgUrl = "img/avatar" + this.contacts.prototype.toString() + ".jpg";
-            console.log(imgUrl)
-            return imgUrl
-        }
+
     },
     methods: {
-
-
+        getAvatarUrl(avatar) {
+            return `img/avatar${avatar}.jpg`;
+        },
+        setCurrentI(i) {
+            this.currentI = i;
+        }
     },
 
 });
