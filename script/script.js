@@ -13,6 +13,7 @@ const app = Vue.createApp({
             contacts,
             currentI: 0,
             newMessage: "",
+            filterWord: "",
             DateTime,
         }
     },
@@ -22,6 +23,16 @@ const app = Vue.createApp({
         },
         currentChat() {
             return this.currentContact.messages;
+        },
+        filteredList() {
+            const searchedWord = this.filterWord.toLowerCase();
+            // this.contacts.forEach(contact => {
+            //     contact.visible = false
+            //     if (contact.name.toLowerCase().includes(searchedWord)) {
+            //         contact.visible = true
+            //     }
+            // })
+            return this.contacts.filter(contact => contact.name.toLowerCase().includes(searchedWord));
         },
     },
     methods: {
@@ -45,8 +56,6 @@ const app = Vue.createApp({
                 this.currentContact.messages.push(newMess);
                 this.resetInput();
                 this.$refs.inputFocus.focus();
-
-
                 setTimeout(this.okPush, 1000);
             }
 
@@ -63,13 +72,7 @@ const app = Vue.createApp({
         resetInput() {
             this.newMessage = "";
         },
-        createReceived() {
 
-        },
-        // pushCreateReceived() {
-        //     setTimeout(this.createReceived, 5000);
-
-        // }
     },
 
 });
