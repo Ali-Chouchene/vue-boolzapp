@@ -34,6 +34,14 @@ const app = Vue.createApp({
             // })
             return this.contacts.filter(contact => contact.name.toLowerCase().includes(searchedWord));
         },
+        lastMessage() {
+            this.contacs.messages.forEach(message => {
+                message.length - 1;
+                console.log(message)
+                return message
+            })
+        },
+
     },
     methods: {
         getAvatarUrl(avatar) {
@@ -45,6 +53,7 @@ const app = Vue.createApp({
         getCurrentTime() {
             return DateTime.now().toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS);
         },
+
         addMessage() {
             if (this.newMessage) {
                 const newMess = {
@@ -57,8 +66,15 @@ const app = Vue.createApp({
                 this.resetInput();
                 this.$refs.inputFocus.focus();
                 setTimeout(this.okPush, 1000);
+
             }
 
+        },
+        bottomFocus() {
+            const target = this.$refs.chat;
+            if (target) {
+                target.scrollTop = target.scrollHeight;
+            }
         },
         /**risposta**/
         okPush() {
@@ -68,13 +84,20 @@ const app = Vue.createApp({
                 status: 'received',
             };
             this.currentContact.messages.push(newReceived);
+            this.bottomFocus()
         },
         resetInput() {
             this.newMessage = "";
         },
+        delMessage(i) {
+            this.contacts[this.currentI].messages
+                .splice(i, 1);
+        }
 
     },
 
 });
+
+
 
 app.mount("#root");

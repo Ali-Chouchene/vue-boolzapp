@@ -40,16 +40,50 @@ h6 {
     width: 25%;
     border-radius: 10px;
     word-wrap: break-word;
+    position: relative;
+}
+
+.message:hover .options-menu {
+    display: block;
+}
+
+.fa-options:hover {
+    color: rgb(76, 255, 53);
+}
+
+.fa-options {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    display: none;
+}
+
+.fa-options:hover .options-menu {
+    display: block;
+}
+
+.options-menu {
+    max-width: 200px;
+    max-height: 100px;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    right: 7px;
+    border: 1px solid rgba(56, 56, 56, 0.384);
+    list-style-type: none;
+    display: none;
 }
 
 .sent {
     align-self: flex-end;
     background-color: #D5F9BA;
+    cursor: pointer;
 }
 
 .received {
     align-self: flex-start;
     background-color: #ffffff;
+    cursor: pointer;
 }
 
 .sended-date {

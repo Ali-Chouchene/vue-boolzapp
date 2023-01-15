@@ -64,7 +64,7 @@
                 </div>
                 <div class="row contacts-list g-4 m-0">
                     <!--ciclo v-for-->
-                    <div v-for="(contact, i) in filteredList" @click="setCurrentI(i)" v-if="!visible"
+                    <div v-for="(contact, i) in filteredList" @click="setCurrentI(i)"
                         class="col-12 align-content-start m-0 pointer py-4 px-4 d-flex justify-content-between">
                         <div class="contacted h-100 d-flex gap-3 align-items-center">
                             <div class="contact-pic">
@@ -74,10 +74,10 @@
                                 <h5 class="m-0">{{ contact.name }}</h5>
 
                                 <!----DA SISTEMARE PERCHE PRENDE L' ULTIMO MESSAGGIO-->
-                                <p class="w-gray  m-0">{{contact.messages[1].text + '...' }}</p>
+                                <p class="w-gray  m-0">{{contact.messages.at(-1).text + '...' }}</p>
                             </div>
                         </div>
-                        <div class="last-date w-gray w-50"> {{contact.messages[1].date}} </div>
+                        <div class="last-date w-gray w-50"> {{contact.messages.at(-1).date}} </div>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,8 @@
                         </div>
                         <div class="contact-infos">
                             <h5 class="m-0">{{ currentContact.name }}</h5>
-                            <p class="fa-gray m-0">Ultimo accesso oggi alle {{contacts[currentI].date}}</p>
+                            <p class="fa-gray m-0">Ultimo accesso : {{contacts[currentI].messages.at(-1).date}}
+                            </p>
                         </div>
                     </div>
                     <div class="chat-options d-flex gap-3 align-items-center">
@@ -101,13 +102,24 @@
                         <i class="fa-solid fa-ellipsis-vertical fa-xl fa-gray"></i>
                     </div>
                 </div>
-                <div class="conversation">
+                <div ref="chat" class="conversation">
                     <div class="container p-5">
                         <div class="row g-2 flex-column p-3">
                             <!--v-for messaggi-->
-                            <div v-for="message in contacts[currentI].messages" class="message shadow col-12"
+                            <div v-for="(message, i) in contacts[currentI].messages" class="message shadow col-12"
                                 :class="message.status">
-                                {{message.text}}<span class="sended-date">{{message.date}}</span>
+                                {{message.text}}<span><i class="fa-solid fa-chevron-down fa-options"></i></span>
+                                <span class="options-menu shadow">
+                                    <ul class="list-group">
+                                        <li class="list-group-item list-group-item-action rounded-0">Info messaggio</li>
+                                        <li @click="delMessage(i)"
+                                            class="list-group-item list-group-item-action rounded-0">
+                                            Cancella messaggio
+                                        </li>
+                                    </ul>
+                                </span>
+                                <span class="sended-date">{{message.date}}</span>
+
                             </div>
                         </div>
                     </div>
