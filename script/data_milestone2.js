@@ -74,6 +74,31 @@ const contacts = [
     }
     ],
   },
+]
 
-
+const answers = [
+  {
+    text: 'ok',
+  },
+  {
+    text: 'ciao!',
+  },
+  {
+    text: 'è dal 2020 che non ci sentiamo',
+  },
+  {
+    text: 'come tela passi?',
+  },
+  {
+    text: 'bene',
+  },
+  {
+    text: 'a stasera',
+  },
+  {
+    text: 'dove eri finito?',
+  },
+  {
+    text: 'allora che mi racconti?',
+  },
 ]

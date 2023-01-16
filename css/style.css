@@ -10,8 +10,9 @@
 
 /**utilities**/
 
-h6 {
+h5 {
     margin: 0;
+    font-size: 17px;
 }
 
 .pointer {
@@ -19,8 +20,8 @@ h6 {
 }
 
 .profile-pic {
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
     border-radius: 50%;
 }
 
@@ -33,7 +34,7 @@ h6 {
 /*! CHAT UTILITIES */
 
 .message {
-    font-size: 17px;
+    font-size: 15px;
     display: flex;
     flex-direction: column;
     padding: 7px;
@@ -213,4 +214,14 @@ h6 {
     left: 0;
     right: 0;
     z-index: 1;
+}
+
+.cover-img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    object-fit: cover;
 }

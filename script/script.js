@@ -3,7 +3,6 @@
 //* LUNOX*//
 const DateTime = luxon.DateTime;
 
-let id = "";
 
 const app = Vue.createApp({
     name: "Boolzapp",
@@ -11,6 +10,7 @@ const app = Vue.createApp({
         return {
             data,
             contacts,
+            answers,
             currentI: 0,
             newMessage: "",
             filterWord: "".toLowerCase(),
@@ -38,7 +38,6 @@ const app = Vue.createApp({
                 return message
             })
         },
-
     },
     methods: {
         getAvatarUrl(avatar) {
@@ -62,16 +61,19 @@ const app = Vue.createApp({
                 this.currentContact.messages.push(newMess);
                 this.resetInput();
                 this.$refs.inputFocus.focus();
-                setTimeout(this.okPush, 1000);
+                setTimeout(this.answerPush, 1000);
 
             }
 
         },
+
         /**risposta**/
-        okPush() {
+
+        answerPush() {
+            const random = Math.floor(Math.random() * 8);
             const newReceived = {
                 date: this.getCurrentTime(),
-                text: "Ok!",
+                text: this.answers[random].text,
                 status: 'received',
             };
             this.currentContact.messages.push(newReceived);
