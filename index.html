@@ -64,7 +64,7 @@
                 </div>
                 <div class="row contacts-list g-4 m-0">
                     <!--ciclo v-for-->
-                    <div v-for="(contact, i) in filteredList" @click="setCurrentI(i)"
+                    <div v-for="(contact, i) in filteredList" @click="setCurrentI(contact.avatar.slice(-1))"
                         class="col-12 align-content-start m-0 pointer py-4 px-4 d-flex justify-content-between">
                         <div class="contacted h-100 d-flex gap-3 align-items-center">
                             <div class="contact-pic">

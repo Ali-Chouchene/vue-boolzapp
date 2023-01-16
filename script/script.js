@@ -3,6 +3,7 @@
 //* LUNOX*//
 const DateTime = luxon.DateTime;
 
+let id = "";
 
 const app = Vue.createApp({
     name: "Boolzapp",
@@ -43,9 +44,8 @@ const app = Vue.createApp({
         getAvatarUrl(avatar) {
             return `img/avatar${avatar}.jpg`;
         },
-        setCurrentI(i) {
-            // this.currentI = index;
-            this.currentI = i;
+        setCurrentI(id) {
+            this.currentI = id - 1;
         },
         getCurrentTime() {
             return DateTime.now().toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS);
