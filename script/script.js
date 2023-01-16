@@ -3,7 +3,6 @@
 //* LUNOX*//
 const DateTime = luxon.DateTime;
 
-let now = "";
 
 const app = Vue.createApp({
     name: "Boolzapp",
@@ -13,7 +12,7 @@ const app = Vue.createApp({
             contacts,
             currentI: 0,
             newMessage: "",
-            filterWord: "",
+            filterWord: "".toLowerCase(),
             DateTime,
         }
     },
@@ -24,15 +23,12 @@ const app = Vue.createApp({
         currentChat() {
             return this.currentContact.messages;
         },
+
         filteredList() {
             const searchedWord = this.filterWord.toLowerCase();
-            // this.contacts.forEach(contact => {
-            //     contact.visible = false
-            //     if (contact.name.toLowerCase().includes(searchedWord)) {
-            //         contact.visible = true
-            //     }
-            // })
-            return this.contacts.filter(contact => contact.name.toLowerCase().includes(searchedWord));
+            return this.contacts.filter(contact => {
+                return contact.name.toLowerCase().includes(searchedWord)
+            })
         },
         lastMessage() {
             this.contacs.messages.forEach(message => {
@@ -47,8 +43,9 @@ const app = Vue.createApp({
         getAvatarUrl(avatar) {
             return `img/avatar${avatar}.jpg`;
         },
-        setCurrentI(index) {
-            this.currentI = index;
+        setCurrentI(i) {
+            // this.currentI = index;
+            this.currentI = i;
         },
         getCurrentTime() {
             return DateTime.now().toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS);
@@ -70,12 +67,6 @@ const app = Vue.createApp({
             }
 
         },
-        bottomFocus() {
-            const target = this.$refs.chat;
-            if (target) {
-                target.scrollTop = target.scrollHeight;
-            }
-        },
         /**risposta**/
         okPush() {
             const newReceived = {
@@ -86,15 +77,21 @@ const app = Vue.createApp({
             this.currentContact.messages.push(newReceived);
             this.bottomFocus()
         },
+        bottomFocus() {
+            const target = this.$refs.chat;
+            if (target) {
+                target.scrollTop = target.scrollHeight;
+            }
+        },
         resetInput() {
             this.newMessage = "";
         },
         delMessage(i) {
             this.contacts[this.currentI].messages
                 .splice(i, 1);
-        }
-
+        },
     },
+
 
 });
 
